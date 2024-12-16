@@ -1,17 +1,17 @@
-@import url("/reset.css");
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
 html,
 body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  font-family: "Lora", serif;
   margin: 0;
 }
 
 body {
-  background: #010101;
-  background: linear-gradient(135deg, #010101, #699ee2);
-  padding: 1em;
+  background: #1b293a;
 }
 
 main {
@@ -19,6 +19,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2em 0;
 }
 
 /* Whole Form Section */
@@ -28,38 +29,29 @@ main {
   background-color: azure;
   max-width: 820px;
   width: 95%;
+  min-width: 420px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row; /* Default layout: left and right side by side */
-  justify-content: start;
+  justify-content: flex-start;
   align-items: stretch;
-  align-content: start;
 }
 
-/*----- Left Side Section -----*/
-
+/* Left Side Section */
 #MainFormSection #leftSideSection {
-  flex: 1 1;
-  align-self: stretch;
-  background-image: url("./img/bgIMG.jpg");
-  background-position: center;
-  background-size: cover;
+  flex: 1;
+  background: url("./img/bgIMG.jpg") center/cover no-repeat;
 }
 
-/*----- Right Side Section ----*/
-
-/* Right Side */
+/* Right Side Section */
 #MainFormSection #rightSideSection {
-  flex: 1 1;
-  align-self: stretch;
+  flex: 1;
   padding: 1em;
 }
 
-/* Form */
 #MainFormSection #rightSideSection form {
-  border: 1px solid blue;
   padding: 1em;
 }
+
 #MainFormSection #rightSideSection form div {
   padding-top: 1em;
 }
@@ -68,53 +60,65 @@ main {
   font-size: 1.2rem;
 }
 
-/* Form inputs */
-#MainFormSection #rightSideSection form .form-input {
-  border: 3px solid #000;
+/* Form Inputs */
+.form-input {
+  border: 1px solid #000;
   border-radius: 5px;
-  height: 50px;
-  line-height: normal;
-  color: #282828;
-  display: block;
+  height: 40px;
   width: 100%;
   box-sizing: border-box;
-  user-select: auto;
-  font-size: 16px;
+  padding: 0 12px;
+  color: #282828;
+  font-size: 14px;
   margin: 0;
-  padding: 0 6px 0 0;
-  padding-left: 12px;
-  :focus {
-    border: 3px solid #5551ff;
-  }
+  user-select: auto;
 }
 
-/* Containers for two inputs */
-#MainFormSection #rightSideSection form #f_l_nameSection,
-#MainFormSection #rightSideSection form #bdayNumberSection {
+.form-input:disabled {
+  background-color: rgba(17, 18, 21, 0.251);
+  cursor: not-allowed;
+}
+
+.form-input:focus {
+  border: 3px solid #fff;
+  background-color: rgba(65, 105, 225, 0.127);
+  font-weight: 700;
+}
+
+.form-input:active {
+  border: 5px solid #1d3068;
+  background-color: royalblue;
+}
+
+/* Two-Input Containers */
+#f_l_nameSection,
+#bdayNumberSection {
   display: flex;
-  justify-items: stretch;
   gap: 1em;
 }
-#MainFormSection #rightSideSection form #f_l_nameSection section,
-#MainFormSection #rightSideSection form #bdayNumberSection section {
+
+#f_l_nameSection section,
+#bdayNumberSection section {
   flex-grow: 1;
+}
+
+.verifyPasswordSection {
+  padding-top: 12px;
 }
 
 /* Button Containers */
 #buttonContainers {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: center;
   padding-top: 12px;
 }
-/* Button */
-#submitButton,
-#resetButton {
+
+/* Buttons */
+button {
   background-image: linear-gradient(#0dccea, #0d70ea);
-  border: 0;
+  border: none;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
-  box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   font-family: Montserrat, sans-serif;
@@ -123,31 +127,37 @@ main {
   padding: 10px 15px;
   text-align: center;
   user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 0.2s cubic-bezier(0.22, 0.61, 0.36, 1),
+    background-image 0.2s;
 }
 
 #resetButton {
-  background-image: linear-gradient(#ea0d0d, #ea180d);
+  background-image: linear-gradient(#a90404, #ea180d);
+}
+
+button:hover {
+  transform: translateY(-2px);
 }
 
 #submitButton:hover {
-  background-color: #065dd8;
-  transform: translateY(-2px);
-}
-#resetButton:hover {
-  background-color: #d80606;
-  transform: translateY(-2px);
+  background-image: linear-gradient(#065dd8, #023d90);
 }
 
-/*----- Responsive layout for smaller viewports -----*/
+#resetButton:hover {
+  background-image: linear-gradient(#ef4747, #d80606);
+}
+
+#submitButton:disabled {
+  background-image: linear-gradient(#d9e3e4, #dee2e7);
+  cursor: not-allowed;
+}
+
+/* Responsive Layout */
 @media (max-width: 700px) {
-  /* Adjust the breakpoint as needed */
   #MainFormSection {
-    flex-direction: column; /* Stacks leftSideSection above rightSideSection */
+    flex-direction: column; /* Stacks sections vertically */
   }
-  #MainFormSection #leftSideSection {
-    min-height: 200px; /* adjust height for smaller viewports */
+  #leftSideSection {
+    min-height: 200px; /* Adjust for smaller viewports */
   }
 }

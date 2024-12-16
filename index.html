@@ -23,7 +23,7 @@
         <form action="#">
           <!-- Form Title -->
           <div>
-            <h2>Register Now</h2>
+            <h1>Register Now</h1>
             <p>This is not a real online service, But if you would like to join the club. We are here. Now let's begin.</p>
           </div>
           <!----- First & Last Name Section -->
@@ -48,27 +48,29 @@
           <div id="bdayNumberSection">
              <!--- BirthDay -->
              <section>
-              <label for="dob" class="label"> Date of Birth </label><br />
-              <input type="date" name="dob" id="dob" class="form-input"/>
+              <label for="dod" class="label"> Date of Birth </label><br />
+              <input type="date" name="dod" id="dod" class="form-input"/>
              </section>
             <!---- Number -->
             <section>
               <label for="phone" class="label"> Phone number </label><br />
-              <input type="text" name="phone" id="phone" placeholder="000-000-0000" class="form-input"/>
+              <input type="text" name="phone" maxlength="10" id="phone" placeholder="000-000-0000" class="form-input"/>
             </section>
           </div>
           <!--- Password Section--->
           <div>
             <!--1: Password-->
             <section>
-              <label for="password" class="label">Password:</label> <br />
-              <input type="text" name="password" id="password" class="form-input" />
-              <small>Requires 12 min, 2 special characters, and 2 numbers</small>
+              <label for="password1" class="label">Password:</label> <br />
+              <input type="password" name="password1" id="password1" class="form-input" />
+              <small>
+                At least 2 uppercase letters, 2 lowercase letters, 2 special characters and between 8 and 18 characters long
+              </small>
             </section>
              <!--2: Password-->
-             <section>
+             <section class="verifyPasswordSection">
               <label for="password2" class="label">Verify Password:</label> <br />
-              <input type="text" name="password2" id="password2" class="form-input" />
+              <input type="password" name="password2" id="password2" class="form-input" />
              </section>
           </div>
           <div id="buttonContainers">
