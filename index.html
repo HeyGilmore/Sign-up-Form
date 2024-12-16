@@ -12,9 +12,14 @@
   </header>
   <main>
 
-    <div>
-      <div></div>
-      <div>
+    <div id="MainFormSection">
+      <!------- Left Side Section ---------->
+      <div id="leftSideSection">
+        <div></div>
+      </div>
+      <!------- Right Side Section ---------->
+      <div id="rightSideSection">
+        <!--- Form ---->
         <form action="#">
           <!-- Form Title -->
           <div>
@@ -22,54 +27,56 @@
             <p>This is not a real online service, But if you would like to join the club. We are here. Now let's begin.</p>
           </div>
           <!----- First & Last Name Section -->
-          <div>
+          <div id="f_l_nameSection">
             <!--First_Name-->
-            <div>
-              <label for="f_name" class="label">First Name:</label>
+            <section>
+              <label for="f_name" class="label">First Name:</label><br />
               <input type="text" name="first_name" id="firstName" class="form-input" />
-            </div>
+            </section>
             <!--Last_Name-->
-            <div>
-              <label for="l_name" class="label">Last Name:</label>
+            <section>
+              <label for="l_name" class="label">Last Name:</label><br />
               <input type="text" name="last_name" id="lastName" class="form-input" />
-            </div>
+            </section>
           </div>
-          <!----- Email Phone & Number Section -->
+          <!--- Email  -->
           <div>
+            <label for="email" class="label"> Email </label><br />
+            <input type="email" name="email" id="email" class="form-input"/>
+          </div>
+          <!----- BDAY & Number Section -->
+          <div id="bdayNumberSection">
              <!--- BirthDay -->
-          <div>
-            <label for="dob" class="formbold-form-label"> Date of Birth </label>
-            <input type="date" name="dob" id="dob" class="formbold-form-input"/>
-        </div>
-            <!--- Email  -->
-            <div>
-              <label for="email" class="formbold-form-label"> Email </label>
-              <input type="email" name="email" id="email" class="form-input"
-              />
-            </div>
+             <section>
+              <label for="dob" class="label"> Date of Birth </label><br />
+              <input type="date" name="dob" id="dob" class="form-input"/>
+             </section>
             <!---- Number -->
-            <div>
-              <label for="phone" class="formbold-form-label"> Phone number </label>
-              <input type="text" name="phone" id="phone" placeholder="000-000-0000" class="formbold-form-input"/>
-            </div>
+            <section>
+              <label for="phone" class="label"> Phone number </label><br />
+              <input type="text" name="phone" id="phone" placeholder="000-000-0000" class="form-input"/>
+            </section>
           </div>
           <!--- Password Section--->
           <div>
             <!--1: Password-->
-            <div>
-              <label for="password" class="label">Password:</label>
+            <section>
+              <label for="password" class="label">Password:</label> <br />
               <input type="text" name="password" id="password" class="form-input" />
-            </div>
+              <small>Requires 12 min, 2 special characters, and 2 numbers</small>
+            </section>
              <!--2: Password-->
-             <div>
-              <label for="password2" class="label">Verify Password:</label>
+             <section>
+              <label for="password2" class="label">Verify Password:</label> <br />
               <input type="text" name="password2" id="password2" class="form-input" />
-            </div>
+             </section>
           </div>
-          <!-- Submit Button -->
-          <button type="submit" value="submit" id="submitButton">Submit</button>
-          <!-- Reset Button -->
-           <button type="reset" value="Reset" id="resestButton">Reset</button>
+          <div id="buttonContainers">
+            <!-- Submit Button -->
+            <button type="submit" value="submit" id="submitButton">Submit</button>
+            <!-- Reset Button -->
+              <button type="reset" value="Reset" id="resetButton">Reset</button>
+          </div>
           </form>
       </div>
     </div>
